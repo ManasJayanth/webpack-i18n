@@ -3,7 +3,7 @@ const path = require('path');
 module.exports = function render(locals) {
   const language = locals.path.split('/')[1]
   console.log(
-    '>>>>', path.join(__dirnam, `../i18n-build/index.${language}.js`)
+    '>>>>', path.join(__dirname, `../i18n-build/index.${language}.js`)
   )
   return Promise.resolve(
     locals.ejsCompile(
