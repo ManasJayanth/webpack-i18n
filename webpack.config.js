@@ -56,6 +56,7 @@ module.exports = TRANSLATIONS.map(({ language, translation }) => ({
         locals: {
           // Properties here are merged into `locals`
           // passed to the exported render function
+          pwd: process.cwd(),
           ejsCompile
         }
       })
