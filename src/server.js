@@ -1,3 +1,5 @@
+const path = require('path');
+
 module.exports = function render(locals) {
   const language = locals.path.split('/')[1]
   console.log(
