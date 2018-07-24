@@ -9,6 +9,8 @@ const ejsTemplate = fs.readFileSync('./template.ejs').toString()
 
 const ejsCompile = ejs.compile(ejsTemplate, {filename: './template.ejs', name: 'abc'})
 
+console.log(';;;;;;;;;;', process.cwd());
+
 const TRANSLATIONS = [{ language: "en" }].concat(
   glob.sync("./languages/*.js").map(file => ({
     language: path.basename(file, path.extname(file)),
