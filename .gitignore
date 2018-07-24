@@ -1,0 +1,4 @@
+dist
+i18n-build
+node_modules
+*.log
