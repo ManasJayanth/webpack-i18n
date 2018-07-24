@@ -1,12 +1,13 @@
 const path = require('path');
+const fs = require('fs');
 
 module.exports = function render(locals) {
   const language = locals.path.split('/')[1]
   console.log(
     '>>>>', path.resolve(locals.pwd, `../i18n-build/index.${language}.js`),
-    require(
+    fs.readFileSync(
       path.resolve(locals.pwd, `../i18n-build/index.${language}.js`)
-    )
+    ).toString()
   )
   return Promise.resolve(
     locals.ejsCompile(
