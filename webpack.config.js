@@ -24,7 +24,7 @@ module.exports = TRANSLATIONS.map(({ language, translation }) => ({
     index: path.join(__dirname, "i18n", "locales.js"),
   },
   output: {
-    path: path.join(__dirname, "i18n-build"),
+    path: path.join(__dirname, "src", "i18n-build"),
     filename: `[name].${language}.js`,
     libraryTarget: 'commonjs'
   },
