@@ -19,7 +19,7 @@ const TRANSLATIONS = [{ language: "en" }].concat(
 );
 
 module.exports = TRANSLATIONS.map(({ language, translation }) => ({
-  mode: 'production',
+  mode: 'development',
   entry: {
     index: path.join(__dirname, "i18n", "locales.js"),
   },
@@ -33,7 +33,7 @@ module.exports = TRANSLATIONS.map(({ language, translation }) => ({
 
   {
 
-    mode: 'production',
+    mode: 'development',
     // entry: {
     //   server: './src/server.js',
     //   barServer: './src/bar-server.js',
