@@ -4,7 +4,7 @@
   "main": "index.js",
   "license": "MIT",
   "scripts": {
-    "build": "echo done"
+    "build": "webpack"
   },
   "dependencies": {
     "webpack": "^4.16.1"

@@ -19,8 +19,8 @@ const TRANSLATIONS = [{ language: "en" }].concat(
 );
 
 module.exports = TRANSLATIONS.map(({ language, translation }) => ({
+  mode: 'production',
   entry: {
-    index: path.join(__dirname, "i18n", "locals.js"),
     index: path.join(__dirname, "i18n", "locales.js"),
   },
   output: {
@@ -33,10 +33,14 @@ module.exports = TRANSLATIONS.map(({ language, translation }) => ({
 
   {
 
-    entry: './src/server.js',
+    mode: 'production',
+    entry: {
+      server: './src/server.js',
+      barServer: './src/bar-server.js',
+    },
 
     output: {
-      filename: 'server.js',
+      filename: '[name].js',
       path: path.join(__dirname, 'dist'),
       /* IMPORTANT!
        * You must compile to UMD or CommonJS
@@ -46,6 +50,23 @@ module.exports = TRANSLATIONS.map(({ language, translation }) => ({
 
     plugins: [
       new StaticSiteGeneratorPlugin({
+        entry: 'barServer.js',
+        globals: {
+          window: {}
+        },
+        paths: [
+          '/en/foo',
+          '/es/foo',
+        ],
+        locals: {
+          // Properties here are merged into `locals`
+          // passed to the exported render function
+          pwd: process.cwd(),
+          ejsCompile
+        }
+      }),
+      new StaticSiteGeneratorPlugin({
+        entry: 'server.js',
         globals: {
           window: {}
         },
