@@ -34,10 +34,12 @@ module.exports = TRANSLATIONS.map(({ language, translation }) => ({
   {
 
     mode: 'production',
-    entry: {
-      server: './src/server.js',
-      barServer: './src/bar-server.js',
-    },
+    // entry: {
+    //   server: './src/server.js',
+    //   barServer: './src/bar-server.js',
+    // },
+
+    entry: './src/server.js',
 
     output: {
       filename: '[name].js',
@@ -50,7 +52,7 @@ module.exports = TRANSLATIONS.map(({ language, translation }) => ({
 
     plugins: [
       new StaticSiteGeneratorPlugin({
-        entry: 'barServer.js',
+        // entry: 'barServer.js',
         globals: {
           window: {}
         },
@@ -66,7 +68,7 @@ module.exports = TRANSLATIONS.map(({ language, translation }) => ({
         }
       }),
       new StaticSiteGeneratorPlugin({
-        entry: 'server.js',
+        // entry: 'server.js',
         globals: {
           window: {}
         },
