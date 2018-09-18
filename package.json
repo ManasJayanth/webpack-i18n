@@ -10,6 +10,7 @@
     "webpack": "^4.16.1"
   },
   "devDependencies": {
+    "babel-loader": "^7.1.4",
     "netlify-lambda": "^0.4.0",
     "ejs": "^2.6.1",
     "glob": "^7.1.2",
