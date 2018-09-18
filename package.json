@@ -4,12 +4,13 @@
   "main": "index.js",
   "license": "MIT",
   "scripts": {
-    "build": "echo hey"
+    "build": "netlify-lambda build .functions"
   },
   "dependencies": {
     "webpack": "^4.16.1"
   },
   "devDependencies": {
+    "netlify-lambda": "^0.4.0",
     "ejs": "^2.6.1",
     "glob": "^7.1.2",
     "i18n-webpack-plugin": "^1.0.0",
